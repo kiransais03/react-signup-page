@@ -8,13 +8,38 @@ import fb from "./images/facebook 1.png"
 const Signuppage =()=>{
 
   let [userdetails,setUserdetails] =useState({name:"",email:"",password:"",confirmpassword:""});
+  let [error,setError]=useState("");
+  let [success,setSuccess]=useState(""); 
 
   console.log(userdetails)
 
   function validateform(event) {
        event.preventDefault();
        console.log("donethis",userdetails)
-       setUserdetails({name:"",email:"",password:"",confirmpassword:""})
+    //    setUserdetails({name:"",email:"",password:"",confirmpassword:""})
+    if(userdetails.name.length>=1 && userdetails.email.length>=1 && userdetails.password.length>=1 && userdetails.confirmpassword.length>=1)
+    {
+        console.log("HI")
+      if(userdetails.email.includes('@') && userdetails.email.includes('.'))
+       {
+         if(userdetails.password===userdetails.confirmpassword)
+         {  
+            setError("")
+            setSuccess("Account successfully created.Please Login!");
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+         } else {
+            setError("Error:Please make sure your password and confirm password match.")
+         }
+
+      }else {
+        setError("Error:Email is not valid.")
+      }
+    } else {
+       setError("Error:All the fields should be filled.");
+       console.log("error")
+    }
   }
 
 
@@ -54,7 +79,9 @@ const Signuppage =()=>{
                     <input type="password" placeholder="Confirm Password" id="confirmpass" onChange={(event)=>{setUserdetails({...userdetails,confirmpassword:event.target.value})}}/>
                     <button type="submit" className="btn btn-info text-white fw-bold">Create Account</button>
                 </form>
-                            
+
+                      { success && <p className="green m-3">{success}</p> }
+                      { error && <p className="red m-3">{error}</p> }
              </div>
              </div>
            </div>
