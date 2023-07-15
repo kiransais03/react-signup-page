@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main-container h1 {
+  margin: 0;
+}
+
+.main-container {
+  margin: 0 auto;
+  max-width: 1600px;
+  background-color: lightblue;
+}
+
+
+.right {
+  width: 100%;
+  background-color: white;
+  padding: 30px;
+  /* border:1px solid grey; */
+}
+
+.right-div {
+  width: 70%;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid whitesmoke;
+  height: 30px;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+
+.left .m-5 {
+ margin-bottom: 5px!important ;
+}
+
+.google,.fb {
+  cursor: pointer;
+}
