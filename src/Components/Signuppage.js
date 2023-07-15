@@ -58,7 +58,7 @@ const Signuppage =()=>{
         <div className="main-container shadow-lg">
            <div className="page-data d-flex justify-content-between">
              <div className="left">
-                <p style={{color:"#FFFFFF"}} className="fs-1 m-5">Find 3D Objects Mockups and Illustrations here.</p>
+                <p style={{color:"#FFFFFF"}} className="fs-3 m-5">Find 3D Objects Mockups and Illustrations here.</p>
                 <img src={leftimg} className="img-fluid img-rounded position-relative" style={{left:"15%"}} alt="logo"/>
              </div>
              <div className="right shadow-lg rounded-start-5">
